@@ -1,5 +1,5 @@
-# HeFESTo_Parameters_010121
-Parameter set 010121 for use with the code:
+# HeFESTo_Parameters_310516
+Parameter set 310516 for use with the code:
 HeFESTo by L. Stixrude and C. Lithgow-Bertelloni, 2005-
 https://github.com/stixrude/HeFESToRepository
 
