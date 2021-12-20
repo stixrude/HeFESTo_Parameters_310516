@@ -1,0 +1,1282 @@
+Changes from inv021208
+
+1) V0 of mgts as per breyetal_99
+
+2) Change in func.f and dfunc.f:
+
+Gibbs free energy of formation (Gform(nspecp)) now computed property instead of being approximated as F_0
+
+3) Thermochemical data for gr are used
+
+4) cats phase equilibria used in inversion.  No cats thermochemistry used.
+
+5) Assume tetrahedral disorder in mgts
+
+6) No thermochemical data for spinel
+ 
+7) Change in Gleib.f
+
+Include derivative of PV term wrt theta_0
+
+8) No thermochamical data for an
+
+9) No thermochemical data for ab
+
+10) Use gasparik_81 data for cats phase equlibria instead of hays_66 used until now
+
+11) Set W_Na-Ca^M1 (cpx)=0
+
+12) Set W_Al-Mg^M2 (cpx) = 24.3
+
+13) Assume octahedral ORDER in mgts
+
+14) Write formulae of en and fs to be consistent with (14), i.e. as Mg_2Mg_2Si_4O_12
+
+15) Octahedral disorder in mgmj
+
+16) Changed formulae of gr, al, py to be consistent with (16), e.g. Mg_3Al_2Si_3O_12
+
+17) Added W_Ca-Mg=10 kJ/mol in garnet as per Haselton & Newton (1980) quoted by Wood and Holloway (1984) pg. 169
+
+18) Removed perkinsetal_81 en+mgts+sp phase equilibria data
+
+19) Corrected phase equilibria data of akaogietal_99 and irifuneetal_99 for sp=pe+co=mgcf
+
+20) Added danckwerthnewton_78 phase equilibrium data on py + fo
+
+21) Added data on en+sp=mgts+fo equilibrium from danckwerthnewton_78 and references therein
+
+22) Corrected py+fo data from perkinsetal_81 (friction correction to pressures using medium B)
+
+23) Removed sp to pe + co stability data
+
+24) Added en+mgts+sp stability data from danckwertnewton_78 and references therein and perkinsetal_81
+
+25) Corrected (24) to reaction proportions
+
+26) Added mgts+di=cats+en equilibrium of gasparik_84 (1.58 GPa, 1573 K)
+
+26) Added more mgts+di=cats+en equilibrium of gasparik_84 (all 1573 K data of opx+cpx+sp+fo assemblage)
+
+27) Changed W_Mg-Al^M2 to 31.3 kJ/mol in cpx
+
+28) Changed W_Na-Ca^M1 to -7.0 kJ/mol in cpx to preserve the value W_di-jd=24.3 found by Holland
+
+32) Corrected error in invert.f in computation of configurational entropy
+
+32) Added en=cen (+di) equilibria from perkinsnewton_80
+
+33) Corrected error of factor of two in entry of en=cen (+di) equilibria of perkinsnewton_80
+
+34) Fixed two errors in entry of en+mgts+sp=fo+py stability data
+
+35) Change in func.f and dfunc.f:
+
+chi-squared of formation energies now computed per formula rather than per atom.  
+This is sensible since the experimental standard
+deviation, which appears in the denominator of our chi-squared is per formula.
+
+36) Fixed error in computation of calorimetrically constrained Debye temperature: sign error in configuration contribution.
+Note that the code was actually okay before the (32) fix!!!  Now it is okay again!
+
+37) Added sp thermochemistry
+
+38) Added fa+qtz=fs equilibria of bohlenetal_80
+
+39) Added an+fa=gt equilibria of bohlenetal_83
+
+40) Removed fs thermochemical data
+
+41) Changed opx formulae:
+
+mgts: Mg_2Al_2Al_2Si_2O_12
+en:   Mg_2Mg_2Si_2Si_2O_12
+fs:   Fe_2Fe_2Si_2Si_2O_12
+
+42) Remove data of boydengland_64 on en+mgts stability (29 points) as this data disagrees with those of
+perkinsetal_81 who discuss the discrepancy on pg. 107
+
+43) Include sp thermochemistry
+
+44) Started from different initial guess with larger Theta_mgts and lower F0_mgts.  Results did not write out
+properly because I had mistakenly deleted the /invert subdirectory in ~/work/qh/invert.  But it is clear from the out 
+file alone that the results are similar to inv032508c
+
+45) Changed cpx formulae:
+
+cats:  Ca_2Al_2Al_2Si_2O_12
+di:    Ca_2Mg_2Si_2Si_2O_12
+cen:   Mg_2Mg_2Si_2Si_2O_12
+he     Ca_2Fe_2Si_2Si_2O_12
+
+46) Fit to G_el at Tsx, rather than at 300 K
+
+47) Changed W_Mg-Al^M2 in cpx to 24.3
+
+48) Changed W_Na-Ca^M1 in cpx to 0.0
+
+49) en thermochemistry of thieblotetal_99 rather than robieetal_95
+
+50) Changed W_Mg-Al^M2 in cpx to 24.3
+
+51) Changed W_Na-Ca^M1 in cpx to 0.0
+
+52) Removed cats=mgts Al partitioning data of gasparik_84
+
+53) Changed cpx formulae:
+
+cats:  Ca_2Al_2(Al_2Si_2)O_12
+di:    Ca_2Mg_2Si_4O_12
+cen:   Mg_2Mg_2Si_4O_12
+he     Ca_2Fe_2Si_4O_12
+
+54) Include cats=mgts Al partitioning data of gasparik_84
+
+55) Remove co=appv pseudo-data
+
+56) Add alpv=appv pseudo-data
+
+57) Add mgpv=mppv data from tsuchiyaetal_04
+
+58) Removed alpv=appl pseudo-data because this is really problematic, alpv not being stable anywhere!
+
+59) Added co=appv pseudo-data
+
+60) Allow W_il to vary
+
+61) Corrected error in entry of perkinsnewton_80 cen+di=en data
+
+62) Added odi to control file
+
+63) Added carlsonlindsley_88 data on en+di=cen+odi at 1.5 GPa
+
+64) Added odi to gasparik_89 data on en+di=cen+odi
+
+64) Added odi to perkinsnewton_80 data on en+di=cen+odi
+
+65) Fixed error in entry of data of carlsonlinsley_88
+
+66) Entered cats=gr+co data from gasparik_81 directly, rather than as quoted by woodholloway_84
+
+67) Added anorthite thermochemistry
+
+68) Removed grossular thermochemistry
+
+69) Changed cpx formulae to remove Al-Si tetrahedral disorder
+
+70) Adjusted F_0 and Theta_0 of cats before inversion since straight inversion of previous result produced 
+misfit to cats=gr+co equilibria.  Values are the inverted values, albeit very similar to input values.  Error in 
+inversion routine?  Perhaps in computation of derivatives?
+
+71) Replace cats tetrahedral disorder
+
+72) include again cats=mgts Al partitioning data
+
+73) Remove thermochemistry constraints except for anchor speces: pe, co, an, qtz, jd, fa
+
+74) Add entropy only constraints for fo, en, di, py, al, coes
+
+75) Remove all py thermochemistry, this was added in 74 inadvertantly due to an error in modifying the cp data file
+
+76) Add wu entropy (not free energy)
+
+77) Add Herzberg data on plg=sp in CMAS
+
+78) Remove an thermochemical F_0
+
+79) Remove Herzberg data on plg=sp in CMAS
+
+80) Add an thermochemical F_0 and lower this arbitrarily by 4 kJ/mol to -4011.9 kJ/mol
+
+81) Remove an thermochemical F_0
+
+82) Use di thermochemical F_0
+
+83) Adjust an thermochemical F_0 in cp data file arbitrary to be less stable by 8.5 kJ/mol to -3999.4 kJ/mol
+
+84) Restart of inv040408d
+
+85) Restart of inv040408e allowing four species comparisons
+
+86) Add sp=pe+co equilibria
+
+87) Add an thermochemistry
+
+88) Split en+di=odi+cen equilibria in two to properly represent phase coexistence, rather than cation exchange.
+
+89) Set S(odi)=S(di)
+
+90) Set W^il_Fe-Al=W^il_Mg_Al and allow neither to vary
+
+91) Remove all data from gasparik_90a (listed as gasparik_90 in the data file)
+
+92) Remove all data from sawamoto_87, MgO-SiO2 data from irifuneetal_96, irifuneetal_98
+
+93) Remove pv-mw partitioning data of: kessonfitzgerald_91, guyotetal_88 (no T measurement); kessonetal_02 (1 Mbar 
+probably within the LS Fe regime in mw)
+
+94) Use new jacksonetal_07 data for dK/dT, dG/dT of en
+
+95) Trim fo-wa-ri-pv+pe data
+
+96) Trim en-mgc2-mgwa+st-mgri+st-ak-mgmj-pv data
+
+97) Trim fs-fec2-feri-wu+st data
+
+98) Trim di-gt-capv data
+
+99) Trim py-mgmj-alpv-mgpv-co-mgil-en data
+
+100) Trim ol-wa-ri-pv-mw Mg-Fe data
+
+101) Artificial feil ohtani datum restored
+
+102) itotakahashi_89 stability data restored
+
+103) Remove artificial feil ohtani datum
+
+104) Add new feil ohtani artificial datum based on approximate il-pv Mg-Fe equipartition
+
+105) Remove itoyamada il-ri Mg-Fe partitioning (retain il-pv Mg-Fe partitioning datum).
+
+106) Remove itotakahashi_89 stability data
+
+107) Adjust new feil ohtani artificial datum from 24 GPa to 23 GPa
+
+108) Remove all en/mgc2=py+mgmj data
+
+109) Restore presnalletal_98 data on en, mgc2
+
+110) Correct error in entry of presnalletal_98 mgc2 data
+
+111) Remove akaogietal_02 pymgmj datum
+
+112) Restore two mgc2=cen points that were erroneously removed in nstep 108.
+
+113) Trim remainder of stability data (pv-ppv, sp-pe+co-mgcf)
+
+114) Delete all cen+di stability data
+
+115) Allow W_Mg-Al^il and W_Fe-Al^il to vary
+
+116) Restort cen+di stability data
+
+117) Trim en+sp=py+fo stability and equilibrium data
+
+118) Trim odi+cen=di+en equilibriao
+
+119) Remove fo=gt, wa=gt, ri=gt Mg-Fe partitioning of Frost_01
+
+120) Change V(odi)=V(di)
+
+121) Changed V(odi) to mean of linear extrapolation of solid solution and V(di)
+
+122) Add cen-di super-solvus phase stability after carlsonlindsley_88
+
+123) Allow Theta_0 of odi to vary
+
+124) Change V(odi) to that from extrapolation of solid solution (70)
+
+124) Change V(odi)=V(di)
+
+125) Change V(odi) to that from extrapolation of solid solution (70)
+
+126) Remove en+sp=py+fo stability and equilibria
+
+127) Restort en+sp=py+fo stability (not equilibria)
+
+128) Remove sp=pe+cp stability
+
+128) Remove en+sp=py+fo stability
+
+129) Restore en+sp=py+fo equilibria
+
+130) Remove en+sp=fo+py stability and equilibria
+
+131) Restore sp=pe+co stability
+
+132) Fix W_Mg-Al^il=66
+
+133) T-site disorder in opx
+
+134) Finite and variable W_Mg-Al^opx
+
+135) Set W_Mg-Al^opx=0
+
+136) Inclue en+sp=fo+py equilibria
+
+134) Finite and variable W_Mg-Al^opx
+
+136) Remove en+sp=fo+py equilibria
+
+137) Restore en+sp=fo+py stability
+
+138) Remove sp=pe+co stability
+
+139) Set W_Mg-Al^opx=0
+
+140) Remove T-site disorder in opx
+
+141) Add en+sp=fo+py equilibrium data
+
+142) Re-enter perkinsetal_81 opx=gt data (cf. excel file)
+
+143) Changed V(odi) to mean of linear extrapolation of solid solution and V(di) (~68)
+
+144) Changed dK_T/dT of en to that of di
+
+145) Change opx formulae to Mg2Mg2Si4O12-Mg2Al2Si2Al2O12 etc.
+
+145) Change cpx formulae to Ca2Mg2Si4O12-Ca2Al2Si2Al2O12 etc.
+
+146) Remove en+sp=fo+py equilibrium data
+
+147) Remove al=co+wu+st stability data
+
+148) Add fo+al=fa+py equilibria 
+
+149) Adjust G_0(an)=-4012.9
+
+150) Restore en+sp=fo+py equilibrium data
+
+151) Remove en+sp=fo+py equilibrium data
+
+152) Add ky
+
+153) Add an=gr+ky+co stability data
+
+154) Add ky=st+co stability data
+
+155) Change W_Ca-Na^cpx(1)=10.1, W_Mg-Al^cpx(2)=14.2
+
+156) Add T-site disorder in cats
+
+157) Remove T-site disorder in cats
+
+158) Add gr thermochemistry
+
+159) Change W_Ca-Mg^gt=15 kJ/mol
+
+160) Add cats thermochemistry with 2Rln2 added to S_0
+
+161) Remove added 2Rln2 from S_0 of cats
+
+162) Add T-site disorder in cats
+
+163) Remove T-site disorder
+
+164) Restore added 2Rln2 to S_0 of cats
+
+165) Set W_Mg-al^cpx=0
+
+166) Remove 2Rln2 from cats S_0 in data file
+
+167) Hardwire additional 2*2Rln2 (per 12 O) to S of cats in cp.f
+
+168) Remove hardwired 2*2Rln2 from cp.f
+
+169) Correct error in computation of vibrational entropy for inverting Theta in invert.f
+
+170) Add T-site disorder in cats
+
+171) Allow W_Mg-Ca^cpx to vary
+
+172) Add en-odi stability datum at 1.5 GPa (carlsonlindsley)
+
+173) Fix W_Mg-Ca^cpx=26.3
+
+174) Remove disorder from sp, hc
+
+175) Restore disorder to sp, hc
+
+176) Add sp thermochemical entropy from chamberlinetal_95
+
+177) Set S(cen) = S(en)
+
+178) Remove cen thermochemistry
+
+179) Fix W_Mg-Ca^cpx=26.3 (this had been left at a similar, inverted value in inv051208a,b)
+
+180) Remove di+cen, en+odi stability
+
+181) Allow W_Mg-Ca^cpx to vary
+
+182) Remove di-cen and odi-en stability
+
+183) Remove cendienodi equilibria at P>10 GPa
+
+184) Set V(cen)=63.5 (was 63.0)
+
+185) Set V(cen)=64.0
+
+186) Set V(cen)=63.0
+
+187) Set V(odi)~70
+
+188) Add low-P en stability (two data)
+
+189) Set W_Mg-Ca(cpx)=29.3
+
+190) Remove 10 GPa cendi=enodi equilibria
+
+191) Set V(odi)~70
+
+192) Set V(odi)~66
+
+193) Remove T-site disorder from cats
+
+194) Hardwire additional 2*2Rln2 (per 12 O) to S of cats in cp.f
+
+195) Change W_Mg-Al^cpx(2)=0.0, W_Na-Ca^cpx(1)=24.3
+
+196) Change V(cen)=63
+
+197) Change W_Mg-Ca^cpx(1)=24.47 after hollandetal_79
+
+198) Changed V(odi)~68
+
+199) Add extra sites to regular solution parameter files
+
+200) Change W_Mg-Al^cpx=14.2, W_Ca-Na^cpx=10.1
+
+201) Add T-site disorder to cats
+
+202) Change W_Mg-Al^cpx=0.0, W_Ca-Na^cpx=24.3
+
+203) Remove T-site disorder in cats 
+
+204) Restore hardwired 2*2Rln2 (per 12 O) to S of cats in cp.f
+
+205) Homogenize cf formulae by changing mgcf to Mg_1Al_1Al_1O_4, and fecf to Fe_1Al_1Al_1O_4
+
+206) Remove he system stability
+
+207) Remove coes thermochemistry
+
+208) Remove O-site disorder from mgmj
+
+209) Restore O-site disorder to mgmj
+
+210) Add sp=pe+co stability
+
+211) Allow for partial T-site mixing in opx: Mg_2Mg_2Si_2Si_2O_4 etc.
+
+212) Remove sp=pe+co stability
+
+213) Remove T-site mixing in opx
+
+214) Lower G_0 of di by 10 kJ/mol
+
+215) Add sp=pe+co stability
+
+216) Remove di G_0 as constraint
+
+217) Add saikiaetal_08 py+capv=gr+mgmj equilibria datum
+
+218) Remove en+sp=py+fo equilibria
+
+219) Add en+sp=py+fo stability
+
+220) Remove sp=pe+co stability
+
+221) Remove en+sp=fo+py stability
+
+222) Add en+sp=fo+py equilibria
+
+223) Add plg=sp=gt stability from herzberg, wood
+
+224) Remove plg=sp=gt stability
+
+225) Remove en+sp=fo+py equilibria
+
+226) Add sp=pe+co stability
+
+227) Restore di G_0 as constraint
+
+228) Add en+sp=py+fo equilibria datum from danckwerthetal_78
+
+229) Eliminate 2 lowest pressure py stability data from hiroseetal_01a
+
+230) Set G_0 of py so that en+sp=py+fo datum of danckwerthetal_78 at 2.025 GPa, 1373 K is matched.  Note change in 
+formulation of this data (and that of fujii_76) from en+sp=mgts+fo to en+sp=py+fo
+
+231) Set G_0 of py to experimental value
+
+232) Remove G_0 of py as constraint
+
+233) Add remaining two danckwerthetal_78 data
+
+234) Add fujii_76 data on coexistence line as per reformulation of (230)
+
+235) Add saikiaetal_08 equilibria datum
+
+236) Remove G_0 (di) as constraint
+
+237) Remove O-site disorder in mgmj, rewrite other gt formulae accordingly
+
+238) Restore coes entropy as constraint
+
+239) Remove sp entorpy as constraint
+
+240) Restore O-site disorder to mgmj
+
+241) Restore chamberlinetal sp entropy as constraint
+
+242) Fix but in calculation of G(qtz) by adding call to "landau" in Ftotsub.f
+
+243) Remove sp entropy as constraint
+
+244) Add W_Mg-Al^cpx=14.2 
+
+245) Set W_Mg-Al^cpx=0
+
+246) Set W_Mg-Ca^gt=10
+
+247) Correct error in entry of ky+gr+qtz data (originally entered as ky+gr+co!)
+
+248) Correct error in inversion V0(coes).  Take this directly from vol, whereas previosly it was calculated from comp
+
+249) Set W_Mg-Ca^gt=5
+
+250) Remove ol-gt Mg-Fe partioning equilibria
+
+251) Remove py stability data of hiroseetal_01a
+
+252) Use thermochemical G_0 or py as constraint
+
+253) Restore ol-gt Mg-Fe partitioning equilibria
+
+254) Restore py stability data of hiroseetal_01a except two lowest T points
+
+255) Remove G_0 of py as constraint
+
+256) Remove sp=pe+co stability data
+
+257) Remove hiroseetal_01a py stability data
+
+258) Restore py stability data of hiroseetal_01a except two lowest T points
+
+259) Restore G_0 of di as constraint
+
+260) Add G_0 of py as a constrain
+
+261) Add sp=pe+co stability data
+
+262) Remove sp thermochemistry
+
+263) Remove sp=pe+co stabiilty data
+
+264) Add sp thermochemistry
+
+265) Note: Same as inv053108g
+
+266) Remove ky=st+co data 
+
+267) Add ky=qtz+co data
+
+268) Add artificial constraints on st=apbo to better constrain Clapeyron slope to that estimated by murakamietal_03
+
+269) Set initial guess of Theta(fppv) to theta_el(fppv)/theta_el(fepv)*theta0(fepv)=843
+
+270) Remove kobayashietal_05 ppv=pv Fe-Mg partitioning datum
+
+271) Add hiroseetal_08 ppv=pv Fe-Mg partitioning datum
+
+272) Remove ppv stability data of maoetal_05
+
+273) Add G0, Gop of fppv from stackhouseetal_06 
+
+274) Set initial guess of Theta(fppv) to theta_el(fppv)/theta_el(fepv)*theta0(fepv)=757 based on (273)
+
+275) Remove mgpv=mppv data of tsuchiyaetal_04
+
+276) Add mgpv=mppv data of tatenoetal_08_4 which contains some pressure-re-calibrated data of hiroseetal_06b
+
+277) Change initial guess at F0 and Theta0 of mppv by hand to agree better with tatenoetal_08_4 data
+
+278) Changed initial guess at F0 and Theta0 of apbo by hand to agree better with estimated transition of murakamietal_03
+
+279) Corrected choice of comparison assemblages.  Previous calculation of G for this purpose was 
+approximate and especially so at high pressure.  Now I just base the choice of comparison assemblages
+on the exact value of G.  I also increased the tolerance: diffmax=10 now as compared with only 4 before.
+
+280) Remove maoetal_97 pv-mw Mg-Fe partitioning data on the grounds that this is based on lattice parameters
+which can fail through the HS-LS transition.
+
+281) Remove katsuraito_96 pv-mw Mg-Fe partitioning data as it seemed redundent with that of martinezetal_97 
+and the latter has the the advantage of constraining the T-dependence of K.
+
+281) Add sinmyoetal_08 pv-mw Mg-Fe partitioning data.
+
+282) Restart
+
+283) Change V0(fepv)=25.485 from jeanlozthompson_83 to better match pressure dependence of K_pv-mw from sinmyoetal_08
+
+284) Remove frost_03 gt-ol Mg-Fe partitioning data
+
+285) Add hacklerwood_89 gt-ol Mg-Fe partitioning data
+
+296) Remove G_0(he) as constraint
+
+297) Add first opx-cpx Mg-Fe partitioning datum of lindsley_83
+
+298) Replace he with cfs: used lindlsey_81 for V_cfs, and opx-cpx Mg-Fe partitioning datum of lindsley_83 recast appropriate for change in composition of Fe cpx endmember.
+
+299) Changed W_Ca-Mg^gt=5 kJ/mol
+
+300) Changed W_Ca-Mg^gt=10 kJ/mol
+
+301) Add en+co=py equilibrium of gaspariknewton_84
+
+302) Remove remaining akaogietal_02 stability data (py, mgil+co, mgpv+alpv)
+
+303) Remove akaogietal_87 py+mgmj stability data
+
+304) Remove F_0(py) as constraint
+
+305) Changed W_Ca-Mg^gt=15 kJ/mol
+
+306) Remove gasparik_84a cats=gr+co data
+
+307) Add haysetal_66 cats=gr+co data
+
+308) Changed W_Ca-Mg^gt=10 kJ/mol
+
+309) Add gasparik_84a cats=gr+co data
+
+310) Remove haysetal_66 cats=gr+co data
+
+311) Set cats S_conf=0
+
+312) Set cats S_conf=2*7.7 J mol K as per beniseketal_07
+
+313) Set W_Mg-Al^cpx(2)=17 and W_Na-Al^cpx(1)=7.3
+
+314) Set cats S_conf=0
+
+315) Set W_Ca-Mg^gt=0
+
+316) Remove remaining py stability data of hiroseetal_01a
+
+317) Set W_Ca-Mg^gt=10
+
+318) Set cats S_conf=4ln2
+
+319) Change formula of cats to Ca_2Al_2(Si_2Al_2)O_12
+
+320) Remove cats additional S_conf-4ln2 from cp.f
+
+321) Set W_Ca-Mg^gt=5
+
+321) Set W_Al-Mg^cpx=17
+
+322) Changed V(cen)=64
+
+322) Changed V(cen)=62
+
+322) Changed V(cen)=62.5
+
+323) Set W_Ca-Mg^gt=10
+
+324) Remove saikiaetal_08 capv=gt datum
+
+325) Corrected errors in comparisons of free energies which are now properly computed taking into account
+the chemical potential, and not just the end-member free energies as before.
+
+326) Removed bohlenetal_83 an+fa=al+gr data since these to not constrain F_0(an),F_0(gr) independently of
+an=gr+ky+qtz
+
+327) Add an=cats+qtz data of hariyakennedy_68
+
+328) Start from inv120509a as this had F_0(gr)=-6273 in better agreement with thermochemistry than with 
+the value F_0(gr)~-6257 from inv250509a
+
+329) Re-start from inv250509b
+
+330) Add univariant cpx=ga top-of-solvus datum from gasparik_84a
+
+331) Changed W_Ca-Mg^gt=5,10; W_Mg-Al^cpx=2,31, W_Ca-Na^cpx such that di jd is still symmetric with W=24.3
+
+332) Changed V(mgts)=59.14
+
+333) Remove danckwerthnewton_78, fujii_76 opx+sp=fo+py data
+
+334) Add danckwerthnewton_78, fujii_76 en+sp=mgts+fo data
+
+335) Remove danckwerthnewton_78, fujii_76 en+sp=mgts+fo data
+
+336) Remove gaspariknewton_84 en+sp=mgts+fo data
+
+337) Set W_Ca-Mg^cpx=27.89 kJ/mol as per Hollandetal_79,80, evaluated using there W_V term at 3 GPa
+
+338) Set S(odi)=S(di)
+
+339) Remove carlsonlindsley_88 cms opx=cpx data at 1.5 GPa
+
+340) Add carlsonlindsley_88 cms opx=cpx data at 3.0 GPa
+
+341) Set S(cen) = S(en) + 2.75 kJ/mol K
+
+342) Remove constraint on S(odi)
+
+343) Set W_Ca-Mg^cpx=24.74 kJ/mol as per Hollandetal_79,80, evaluated using their W_V term at 0 GPa
+
+344) Set S(cen) = S(en) + 2.75/2 kJ/mol K as in hollandetal_79.  This is corrected from (341) above because
+the hollandetal_79 DS is based on a 10 atom formula while my cp data file uses a 5 atom formula for en and cen
+as in robieetal_95
+
+345) Set V(cen) = V(en)
+
+346) Set alp(cen) = alp(en) This and (345) done so that the entropy contrast: S(cen) - S(en) remains more constant from 1000-2000 K.
+
+347) Set W_Ca-Mg^cpx=27.89 kJ/mol as per Hollandetal_79,80, evaluated using their W_V term at 3 GPa
+
+348) Set W_Ca-Mg^cpx=22 kJ/mol
+
+349) Set W_Ca-Mg^cpx=24.74 kJ/mol as per Hollandetal_79,80, evaluated using their W_V term at 0 GPa
+
+350) Set S(cen) = S(en)
+
+351) Set W_Ca-Mg^cpx=22 kJ/mol
+
+352) Change W_Mg-Al^cpx=17,17
+
+353) Set W_Ca-Mg^cpx=24.74 kJ/mol as per Hollandetal_79,80, evaluated using their W_V term at 0 GPa
+
+354) Change W_Mg-Al^cpx=41,2
+
+355) Set S(cen) = S(en) + 2.75
+
+356) Remove S(cen), V(cen), alp(cen) constraints
+
+355) Change W_Mg-Al^cpx=36,2
+
+356) Change W_Mg-Al^cpx=39,2
+
+357) Return to inv270509b: W_Mg-Al^cpx=31,2; W+Ca-Mg^cpx=24.74; V(cen)=62.5; no constraints on 
+S(cen) alp(cen).  Only difference is that now we fit to the 3 GPa data (rather than the 1.5 GPa data)
+of carlsonlindsley_88
+
+358) Set W_Ca-Mg^cpx=27.89 kJ/mol as per Hollandetal_79,80, evaluated using their W_V term at 3 GPa
+
+359) Set W_Ca-Mg^cpx=22 as it seems this may improve the cmas result
+
+360) Set W_Ca-Mg^cpx=19 as it seems this may improve the cmas result and decreasing this parameter seems
+to have very little adverse affect on fits to the data
+
+361) Set W_Ca-Mg^cpx=24.74 kJ/mol
+
+362) Set alp(cen) = alp(en) in order to make DS(cen-en) more nearly constant with increasing temperature
+
+363) Return to the baseline (i.e. 357, i.e. remove constaints on alp(cen)) and set W_Mg-Al^cpx=31,12.  
+Reasoning: M1 Mg in cpx needs to be de-stabilized, but not at the expense of Al in cpx.  Changning W in this 
+way will influence the stability of cats via the solvus reaction of gasparik_84b much more than
+Al in cpx for peridotitic compositions which are at much lower cats concentrations.  The second W_Mg-Al^cpx
+(the one now set to 12) influences energetics at large cats concentrations more.
+
+364) Set W_Mg-Al^cpx=31,-8.  Reasoning: Changing the second W from 2 to 12 actually made F_0 (cats) LESS
+stable.  So this should make it more stable.
+
+365) Set W_Mg-Al^cpx=35,-8.  Previous result increased Al in cmas cpx and left MgO in cmas cpx little changed.
+This change should improve both quantities.
+
+366) Add opx=cpx Al,Mg partitioning datum of gasparik_84b
+
+367) Remove univariant cpx=gt constraint from gasparik_84a
+
+368) Re-express opx-cpx Al,Mg partitioning datum of gasparik_84b as mgts+di=cats+en, di=odi, and cen=en equilibria
+
+369) Add klemmeoneill_00 opx=cpx datum as di=odi and cen=en
+
+370) Remove gasparik_84b data
+
+371) Express klemmeoneill_00 data as cen=en only
+
+372) Set W_Mg-Ca^cpx=21, i.e. to the lower limit of that permitted by the calorimetric data according to newtonetal_79
+
+373) Set W_Mg-Al^cpx=26,7
+
+374) Set W_Mg-Al^cpx=36,-3
+
+375) Set W_Mg-Al^cpx=36,7.  This shows that increasing the first W (31) decreases both Al and Mg in cpx.  Decreasing the second W (2) 
+causes Al in cpx to decrease less, while leaving Mg in cpx little changed.
+
+376) Set W_Mg-Al^cpx=31,2
+
+377) Restore cpx=gt cmas univariant equilibrium datum of gasparik_84a
+
+378) Set W_Mg-Ca^cpx=21
+
+379) Set W_Mg-Ca^cpx=24.74
+
+380) Set W_Mg-Al^cpx=26,7
+
+381) Set W_Mg-Al^cpx=36,-3
+
+382) Set W_Mg-Al^cpx=36,7
+
+383) W_Mg-Al^cpx=31,2; W_Mg-Ca^cpx=24.74; Add klemmeoneill_00 di=odi equilibrium datum
+
+384) Set W_Mg-Ca^cpx=21
+
+385) Set W_Mg-Ca^cpx=24.74; W_Mg-Al^cpx=26,7
+
+386) Set W_Mg-Al^cpx=36,-3
+
+387) Set W_Mg-Al^cpx=36,7
+
+388) Set W_Mg-Al^cpx=17,17, W_Mg-Ca^gt=10,10
+
+389) NEW FORMULATION FOR REGULAR SOLUTION TERMS (hollandpowell_93)
+
+390) Allow W_mgts-odi in addition to W_en-odi to vary.  Start from inv250509e
+
+391) Start from inv050609a
+
+392) NEWER FORMULATION FOR REGULAR SOLUTION TERMS (hollandpowell_03, asymmetric)
+
+393) Re-fit di-cats solution enthalpy with W=52, alpha_cats=3.5
+
+394) Re-fit py-gr solution enthalpy with W=59, alpha_gr=5.5.  Yielded x_gr~0.02 in cmas garnet
+
+395) Set W_Mg-Ca^gt=40 symmetric.  Yielded x_gr~0.10 in cmas garnet
+
+396) Set W^gt=59, alpha_gr=5.5.  
+
+397) Remove gasparik_84a opx=cpx partitioning data
+
+398) Add perkinsnewton_80 opx=cpx partitioning data at 1173 K and 2.5 GPa
+
+399) Add perkinsnewton_80 cpx=gt partitioning data at 1173 K and 2.5 GPa
+
+400) Weight reaction data by number of atoms only, i.e. remove formula that included an estimate of the uncertainty in the composition which 
+had been applied only to those data containing cen and mgmj.
+
+401) Set W^gt=30 symmetric
+
+402) Add FeTiO_3 ilmenite
+
+403) Add DfG0(fo) as constraint
+
+404) Add DfG0(en) as constraint
+
+405) Set S(odi)=S(di), alp(odi)=alp(di)
+
+406) Remove DfG0(en) as constraint
+
+407) Remove restrictions on S(odi), alp(odi)
+
+408) Add di stability points along melting curve because odi was too stable in peridotite
+
+409) Change V(odi)=70 because opx was re-entrant at ~10 GPa in tinaquillo at 1794 K.  I have subsequently discovered that the re-entrant behavior was due to an error
+in the control file!  I had entered he rather than cfs as the Fe cpx species.
+
+410) Changed alp(mppv), Vo(mppv), compression (mppv), dK/dT, dG/dT (mppv) according to guignotetal_07 and stackhouseetal_05b.  This may yield pv=ppv transitions that look more like seismology.
+
+411) Add artificial mgpv+fppv=fepv+mppv datum at 4000 K to control Theta(fppv): Assume that partitioning is the same at 4000 K as at 1750 K
+
+412) Add artificial mgpv+fppv=fepv+mppv datum at 4000 K to control Theta(fppv): Assume equipartitioning at 4000 K
+
+413) Change V(fppv)=V(mppv)+V(fepv)-V(mgpv) based on updated values of V(mppv) and V(fepv)
+
+414) Tighten bounds on co=appv transition (zero width)
+
+415) Change co=ppv transition to more accurately reflect negative Clapeyron slope of tsuchiyaetal_05
+
+416) Change W_Mg-Al^pv=40
+
+417) Change W_Mg-Al^ppv=60
+
+418) Reset alpv properties to those of Rh_2O_3 structured Al_2O_3 inclding V_0, and compression
+
+419) Add co=Rh_2O_3 (alpv) transition to stability (tsuchiyaetal_05)
+
+420) Add Rh_2O_3 (alpv) = appv transition to stability (tsuchiyaetal_05)
+
+421) Reset solution energetics of mgpv-alpv to match results of tsuchiya^2_08
+
+422) Allow W_mgil-co to vary
+
+423) Set W_appv-mppv=68 close to the minimum required to produce ppv exsolution on the en-co join
+
+424) Set W_appv-mppv=60, agrees with tsuchiya^2_08 enthalpy of mixing.
+
+425) Reset physical properties of mgpv alp: katsuraetal_09; kgp: murakamietal_07a; kgt: wentzcovitchetal_04a (corrected)
+
+426) Reset pe G:murakamietal_09
+
+426) Reset wu G:marquardtetal_09
+
+427) Restore he in place of cfs
+
+428) Fix formula of jdmj
+
+429) Add artificial jdmj=jd datum to constrain Theta(jdmj)
+
+430) Add fecf=fepv Mg-Fe partitioning data (one artificial) to constrain F_0 (fecf) and Theta (fecf)
+
+431) Found bugs in inversion: a) for pe, the initial guess at gamma produced spinodal instability
+at T=2973 K, the maximum temperature of the fiquetetal_99 data.  The inversion then did not converge 
+properly.  This problem has affected gamma and q of MgO for a long time, perhaps even in the 2005 GJI 
+paper. b) Extra theory meant for elastic softening of st had a parameter number 42 which had not been
+assigned a number.  This theory caused Go to be increased by 1 GPa for several phases.
+
+432) Remove mgpv+alpv stability data
+
+433) Add W_he-cen=W_di-cen
+
+434) Remove one of the two opx-cpx Mg-Fe partitioning data since entropy of he is fixed by calorimetry
+
+435) Add DFT constraint on pe+co=mgcf at 1 K
+
+436) Add frost_03b data on wa-mw Mg-Fe partitioning
+
+437) Remove 1600 K katsuraetal_04 ol-wa Mg-Fe partitioning
+
+438) Fix W_ol, W_wa, W_ri to values given by frost_03b
+
+439) Remove 1900 K katsuraetal_04 ol-wa Mg-Fe partitioning
+
+440) Add feietal_90 wa-mw Mg-Fe partitioning since this is consistent with frost_03b and constrains Theta(fewa)
+
+441) Remove wiserwood data.  This contained an error!  I had entered the temperature (1400 K) as 1673 K!  I have corrected this mistake in the data file.
+
+442) Add ol=mw Mg-Fe partitioning of frost_03b at 6 GPa since at this pressure the data cover the largest variation in fa#
+
+443) Allow W_ol,wa,ri to vary
+
+444) Remove two points from wa=mw Mg-Fe partitioning data of frost_03b one each at 14 and 14.5 GPa which do not appear in his Fig. 1b
+
+445) Add points from feietal_04a in which more than one phase was observed. 
+
+446) Restore hiroseetal_01b mgpv stability at 2273 K, corrected for pressure calibration after feietal_04a.
+
+447) Fix Theta(mgmj)=Theta(py)
+
+448) Change garnet formulae to remove octahedral Mg-Si mixing in mgmj
+
+449) Add W_py-mgmj=46 as per vinogradetal_06
+
+450) Remove katsuraetal_04 fo-fa, mgwa-fewa stability data
+
+451) Restore katsuraetal_04 ol-wa Mg-Fe partitioning data
+
+452) Remove frostetal_03b wa-mw Mg-Fe partitioning data
+
+453) Restore frostetal_03b wa-mw Mg-Fe partitioning data
+
+454) Remove katsuraetal_04 ol-wa Mg-Fe partitioning data
+
+455) Add gasparik_90 c2c=mgmj partitioning datum
+
+456) Remove hiroseetal_01a pymgmj stability data
+
+457) Restore saikiaetal_08 data on gr=capv equilibrium
+
+458) Allow W_gr-mgmj to vary
+
+459) Reset il-pv Mg-Fe partitioning data to force equipatitioning at 1373 and 2073 K.  I did this because:
+a) theta_feil seemed to high, much higher than theta_fepv b) feil and feil+wu had stability fields in
+fa and fs and c) a field of il+mw appeared in ol143
+
+460) Narrow bounds on st=apbo transition
+
+461) Change pyroxenes and c2 to 10 atom formula units
+
+462) Add T-site mixing to an and ab
+
+463) Change code by commenting out the following line:
+
+c        if (sname(ispec) .ne. 'sp  ') sconf = smag
+
+which meant that the configurational entropy was not considered in fitting theta to experimental 
+calorimetry data.  This caused not errors in previous inversions because the only species for which
+I determined theta calorimetrically AND that had disoder was cats for which I used the data of etzeletal_07
+directly without a correction for configurational disorder.  With the change to the code, I fit instead to
+the calorimetric data with the configurational entropy correction, yielding the same theta for cats and the 
+same entropy for cats.  Theta of ab and an are different now because I am now including disorder in the formula
+unit.  Previous inversions were actually inconsistent in their treatment of an since the data of Robieetal_95
+includes the configurational entropy correction whereas my formula did not.
+
+464) Remove T-site disorder in feldspars.  This seems to be the best assumption in the case of an for which
+HP98 have a critical temperature of 2300 K.  On the other hand ab has TC=950 K and hollandpowell_96 show that
+T-dependent disorder introduces visible curvature to the ab=jd+qtz boundary.  However, the effect is very subtle.
+Further investigation reveals that the data of robieetal_95 does NOT include S_conf for an so previous inversions
+treated an consistently, i.e. no Al/Si disorder in my an formula or in the experimental data. Note that inv220909
+differs from inv060809 only in the pyroxene formula units.
+
+465) Add critical transition for st=cacl2 based on the equation for the boundary given by onoetal_02: P=51 + 0.012 T
+and the observation by andraultetal_98 that the DV of transition is less than experimental uncertainty (2 per mil), we have
+TC=-4250 K, DV=0.03 cm^3/mol, DS=0.36 J mol-1 K-1.
+
+466) Switch to wentzcovitchetal_06 for dG/dT of mppv.  Note error in inv220909 and inv290909: because these
+were based on input paramameter files in which px was inconsistently switch from 20 to 10 atom formula
+units vs-rho systematics and all G derived from them were wrong, for example appv.
+
+467) Use stackhouseetla_05a for dG/dP, dG/dT and dK_S/dT of appv.  Note that previously I had
+erroneously entered this data so that the code read Delta G as being at 0 GPa instead of 136 GPa.
+
+468) Use tsuchiyaetal_04b for G, dG/dP of mppv.  This fits the experimental data of murakamietal_07, but
+constraints the slope much better.
+
+469) Fix eta(mppv)=eta(mgpv)
+
+470) Use caracascohen_05b for G, dG/dP of appv
+
+471) Use systematics for dG/dT of alpv (and appv).  This causes problems for appv (eta<0) since G(P=0) is
+small.
+
+472) Use stackhouseetal_05b for dG/dT and dK/dT of alpv and appv.
+
+473) Use stackhouseetal_06a for dG/dP of fepv and fppv and for G of fppv.
+
+474) Use stackhouseetal_05b for dG/dT of mppv.
+
+475) Assume that dK/dT os stackhouseetal_05b refers to adiabatic K_S
+
+476) Use sysematics for dK/dT of alpv and appv
+
+477) Restart from inv290909
+
+478) Add nepheline
+
+479) With error function stability minimization and uniform error of 1.0 kJ/mol
+
+480) With error function stability minimization and uniform error of 0.1 kJ/mol
+
+481) With error function stability minimization and uniform error of 1.0 kJ/mol
+
+482) Fix error in data entry for kgp/qtz.  Pmax incorretly set to 0 leaving Kop unconstrainted and producing inverted values Kop~20 and increasing with each new run.
+
+483) Stabilize inversion of species properties so that they are reproducible from run to run to within tol=1.e-8
+
+484) Test error function coding by inverting stability only.
+
+485) Stabilize computation of func: with error function, comparison of stability to itself generates a contribution ln(2).  This was being added sometimes and others not.  Now I add it always and subtract nphs*ln(2)
+afterwards.
+
+486) Inversion of stability only
+
+487) Invert stability and reactions
+
+488) Clean up treatment of errors.  Previously: a) rnxerr=3 was hardwired in phssub.f for all reaction data except those involving cen 
+or mgmj b) rxnerr=1 was hardwired in func and dfunc.  Changes: a) move bd and rxnerr to phas.inc b) remove the multiplication by rxnerr=3 
+in phssub.f c) divide fnpr for cen and mgmj reactions by rxnerr d) set rxnerr=3*bd.  Result is identical with inv190510 as it should be.
+
+489) With error function stability minimization and bd=0.3 kJ/mol, rxnerr=3 kJ/mol
+
+490) Remove onoetal_0x pe+co=mgcf DFT data.  This forced a very negative Clapeyron slope which stabilizes mgcf on the en-py join at 2273 K and P>50 GPa.
+
+491) Remove akaogietal_99 pe+co=mgcf data
+
+492) Add irifuneetal_02 pe+co=mgcf data
+
+493) Restore akaogietal_99 pe+co=mgcf data
+
+494) Remove irifuneetal_02 pe+co=mgcf data
+
+495) Use executable with old errors stored in OLD050510
+
+495) Restart from inv050510 but with ab from inv161009. Goal is to get ab parameters as similar as possible to those of inv161009 while
+including the jd=ab+neph data
+
+496) Restart from inv050510.  Add jdpv.  Re-cast capv as CaCaSi2O6 (change parameter file and phase equilibria data as appropriate).  
+et jdpv energetics by requiring cf-absent in pyrolite along the 1600 K adiabat.
+
+497) 241010.  Double the formula of pe and wu.  This entailed changes to the parameter files, to the mw phase file, and to the phase equilibria data files.
+Reproduce old results with final residual of ~0.811.  Return capv to un-doubled formula.  Add NaAlO2 data.
+Data saved in data.231010.  Data with NaAlO2 data added saved in data.241010.  Inversion saved in inv231010
+
+498) 251010.  Restart from inv050510.  Remove nao and jdpv from control file and phase equilibria data.  Use data.211010.  Purpose is to compute errors, which were not computed before.  Store results in inv251010.
+
+499) 041110.  Add W_cen-jd=23.2 according to gasparik_92
+
+500) 041110.  Add W_he-cats=W_di-cats and W_he-jd=W_di-jd.  Produced F_0, theta_0 for all species identical to inv251010 (to within 0.1).  This includes F_0 (jdmj) because the data that constrain its properties are relative to pure jd so the added W_cen-jd interaction has no effect.  Store results in inv011110.
+
+501) 051110.  Allow W_cen-jd to vary.  Add cen-jd=mgc2 data point from gasparik_92.  Find a value of ~53 which is quite a bit higher the value in gasparik_92.  Store data in data.021110.  Store results in inv021110.
+
+502) 051110.  Add NaAlO_2.  Rename this to anao.  Use data that was saved in data.241010 and add to this the new cen-jd=cen point.  Store data in data.031110.  Store results in inv031110.
+
+503) 220614.  Add namj.  Remove jdmj.  Re-formulate gasparik_92 mgil=mgmj point in terms of namj.  Add new point from dymshitsetal_13 for gt+cf coexistence.  Invert for W_mgmjnamj and W_mgcfnacf.  Store data in data.220614.  Store results in inv220614.
+
+504) 230614.  Add W_pe-anao=54, i.e. identical to that of W_jd-cen for one MgMg=NaAl exchange.  This was done because pe and anao showed too much intersolution on the mgcf-nacf join in comparison with the data of onoetal_09.
+
+505) 230614.  Add nal (mnal, fnal, nnal).  Add sp+jd+anao=mnal+nnal stability from onoetal_09 and nal+cf coexisting compositions on mgcf-nacf join from onoetal_09.  Store results in inv230614.  Store data in data.230614.
+
+506) 240614.  Correct data entry errors for nal stability.  Yields better solution.  
+
+507) 240614.  Add enstatite melting points at 0 and 5 GPa.  Store results in inv240614.  Store data in data.240614.
+
+508) 240814.  Add one artificial datum to constrain fnal Theta.  Yields sensible value (886 K).  Set W_pe-anao=60.  Smaller values
+cause jd+co+pe+anao to be more stable than sp+jd+anao (iphs=347) because of the pe-anao solid solution.  
+
+509) 310814.  Change mgcf and nacf K/K' constraints to experimental eos measurements (comp).  Use Brillouin data to constrain G/G'.  Similarly for mnal.  Change dG/dT and dK/dT of mgpv according to zhangetal_13.
+
+510) 010914.  Add thermal expansivity constraints for mnal and mgcf.  Fix q of all cf and nal phases to 1.0
+
+511) 020914.  Add stability of nacf0.7mgcf0.3 and 3mnal + 1nnal at 30
+
+512) 030914.  Replace nacf0.7mgcf0.3 stability with nacf0.8mgcf0.2 stability
+
+513) 050914.  Fixed calculus error in Gleib.  This produces better solutions (smaller values of func).  Did not converge after 500
+iterations of dfpmin.
+
+514) 060914.  Continuation of inv050914.  Still not converged to the required tolerance (1.e-12), which may be unrealistically small.  However, all derivative magnitudes are smaller than 0.01.  Also used streamlined comparison lookup as coded in stoich.f.  This will not find combinations involving negative amounts of species.  But these are now a bit cludgy anyway since negative amounts of species fall outside the scope of the HP03 ASF formulation.
+
+515) 070914.  Set nnal size parameter to 5.0
+
+516) 080914.  Set nnal size parameter to 0.2
+
+517) 090914. Set nnal size parameter to 5.0.  Add cf=nal stability in terms of two balanced reactions instead of cation exchange.  Add fictive nal stability at 47 GPa.  Invert with nlopt.
+
+518) Set nnal size parameter to 5.0.  Set nacf size parameter to 5.0.
+
+519) Set nnal size parameter to 0.0.  Set nacf size parameter to 5.0.
+
+520) 120914.  K_0mgcf=221 GPa. size parameters of nnal and nacf = 1.0
+
+521) 130914.  Set size_nacf=2.0
+
+522) 140914.  Adjust nal = cf coexistence reaction to make compositions more accurate.  Remove erroneous mgwa stability point at 22.82     2173.0    feietal_04a.
+
+523) 150914.  Add pure mnal=cf point.
+
+524) 170914.  size_nacf=3.0
+
+525) 180914.  size_nacf=1.0
+
+526) 190914.  size parameters all unity.  Change compression of mgcf back to suedaetal_09 values of K, K'. 
+
+527) 200914.  Change K_0mnal=207 GPa.
+
+528) 210914.  Change K_0mnal=208.  Change K_0mgcf=213.
+
+529) 220914. size_nacf=2.0
+
+530) 230914.  size_nacf=1.0.  K0mnal=206.
+
+531) 240914.  size_nacf=2.0
+
+532) 250914.  size_nacf=3.0
+
+533) 260914.  size_nacf=2.2
+
+534) 270914.  size_nacf=2.1
+
+535) 300815.  Change various physical parameters including: elasticity of di, ak, coes, sp
+
+536) 310815.  Also change elasticity of mgwa,fewa.  Add Schollenbruch et al. hc=co+wu equilibria.  Allow W(mgpv,alpv) to vary
+
+537) 010915.  Also allow W(mgil,co) to vary.  
+
+538) 020915.  Update eos for co, alpv, appv.
+
+539) 030915.  Replace constraints on co=alpv and alpv=appv from tsuchiyaetal_05b with those of katoetal_13.  Both transition pressures are now much higher.
+
+540) 081015.  Use wangetal constraint on G'(mgwa) but retain sinogeikin constraint on G_0(mgwa).   Remove Schollenbruch et al. phase equilibria data.   Use spezialeetal_04 for M,M' of fa.
+
+541) 011115.  Assume W_fe,x=W_mg,x where fe and mg stand for Fe and Mg bearing end-members and x stands for non-Mg,Fe end-members.
+
+542) 071115.  Add W_namj-py.  Set initially to a value of 10.0.
+
+543) 081115.  Set W_namj-py to the value required to match the dymshitsetal_13 datum.  Set all W_cf and W_nal to zero.  
+
+544) 091115.  Starting from 081115, allow W_cf and W_nal to vary.  size_nacf=1.0
+
+545) 101115.  Optimize size_nacf
+
+546) 111115.  Remove artificial mgcf+nacf=mnal datum.
+
+547) 121115.  Set W_al-gr=0 after geiger_87.  Make the change to the code as well, although I did not re-run the code to reproduce a new out file.
+
+548) 141115.  Set K'=4.1 for mnal.  This was done to avoid nal reappearring as a stable phase at very high pressure in basalt (e.g. 2600 K 120 GPa).
+
+549) 151115.  Set W_fepv-alpv=0.  Make the change to the code as well, although I did not re-run the code to reproduce a new out file.
+
+550) 161115.  Fix fo+al=fa+py data entry error (hacklerwood_89).
+
+551) 010116.  Remove 1673 K pv=gt and il=gt points of kuboakaogi_00.  These two points produced the largest deviation and tend to de-stabilize pv.
+
+552) 020116.  Remove all pv=gt and il=gt points of kuboakaogi_00 except those at 1873 K.  These tend to produce the most al-rich pv.
+
+553) 030116.  Add mgmj component to gt for kuboakaogi_00 pv=gt 1873 K point.  This was necessary in order to reproduce experimental x_alpv in the full equilibrium MAS assemblage.
+
+554) 040116.  Replace saikia point with two others at lower and higher pressure.  Allow W_py-gr to vary.
+
+555) 050116.  Return to W_py-gr=30 fixed.  Allow size of gr to vary.
+
+556) 060116.  Allow W_py-gr and size(gr) to vary.
+
+557) 070116.  Return to W_py-gr=30, size(gr) = 1.  Change perkinsnewton_80 reaction to their reaction B and to their 1173 K 3 GPa point as specified in abstract.  
+Also, remove gasparik_84a di+cats=gr+py stability points and replace by reaction (3) as specified in the abstract
+
+558) 080116.  Use perkinsnewton_80 2.5 GPa, 1173 K point for gr (instead of 3 GPa point) with reaction B.
+
+559) 090116.  Fix W_py-gr=61, size(gr)=5.6 (best fit to Newton et al. 1977 data).
+
+560) 100116.  Fix W_py-gr=38, size(gr)=2.8 (best fit of Wood and Holloway 1984).
+
+561) 110116.  Fix W_py-gr=38, size(py) = 0.35, i.e. same shape of H_xs(x_gr) as 100116.
+
+562) 120116.  Fix W_py-gr=30, size(py), size(gr) = 1.  Allow size(mgmj) to vary.
+
+563) 130116.  Replace saikiaetal_08 point with two others at higher and lower pressure.  Allow size(mgmj) to vary.
+
+564) 140116.  Return to one saikiaetal_08 point.  Return size(mgmj)=1.  Replace pv=py, il=py points of kuboakaogi with two pv=il points.
+
+565) 150116.  Add two more namj reactions to fully constrain F_0(namj), theta_0(namj), W_py-namj, W_mgmj-namj
+
+566) 160116.  Add three points from bobrovetal_08 remove gasparik_92 gt=cf point.  Note.  This was a disaster.  The bobrovetal gt compositions seem wrong as they are not nearly rich enough in Na.
+
+567) 170116.  Remove bobrovetal_08 points.  Add two gasparik_96b points: the two highlighted in the text as producing gt compositions closest to the di-jd join (pg. 479 column 2).  Found that finite mgmj content must be entered for the equation to make sense.  This may have been one of the problems with the entry of the bobrovetal_08 data, for which I entered 0 mgmj.  Note that in writeout, I was still mistakenly equating W_gr-namj=W_py_namj.  I edited the gt phase file by hand to propertly reflect the inverted value and fixed the code.  Fixed all gt W except for those involving namj.
+
+568) 180116.  Allow other gt W to vary as well.
+
+569) 190116.  Same as previous, but start from all W_namj-x=0.
+
+570) 200116.  Allow W_py-gr to vary.  Start from inv180116.
+
+571) 210116.  Set V_py-gr=1.03 cm^3/mol.  
+
+572) 220116.  Same as 571, but start with W_gr-mgmj=0.
+
+573) 230116.  Same as 572, but remove the gasparik_92 gt=cf datum.
+
+574) 240116.  Same as previous, but start with size(nacf)=2.5
+
+575) 250116.  Set V_gr-mgmj=1.03.  Start from inv140116.
+
+576) 260116.  Set K_S0 (mnal)=206.  Start from inv140116.
+
+577) 270116.  Restore artificial mnal=cf datum.  This was removed at 111115.
+
+578) 280116.  Remove all katsuraetal_04 ol and wa stability points.
+
+579) 290116.  Remove feietal_01 wa-mw partitioning data.
+
+580) 300116.  Add frost_03 fewa=fa and fewa=feri triple point data.  Add grover_72 en stability.
+
+581) 310116.  Replace mirwaldmassone_80 qtz=coes with bohlenboettcher_82.
+
+582) 010216.  Add artifical morishimaetal_94 fo=mgwa point.
+
+583) 020216.  Replace frost_03b ol=mw partitioning data at 6 GPa with that at 11 GPa.
+
+584) 300316.  Add enm.  Physical properties from dft (mgsio3.xiao inversion all V,T).  F_0 and S_0 from opx melting curve.
+              Note that the lfit inversion was performed with vofix=.false. which leads to inconsistency.
+
+585) 310316.  Same as previous but with lfit inversion performed with vofix=.true.
+
+586) 010416.  Replace high-P en melting equilibria with 25 GPa, 2900 K, mgpv melting.
+
+587) 020416.  rerun lfit but with V/V_x<1.2
+
+587) 030416.  rerun lfit but with 0.45<V/V_x<1.2.  Use en=enm at 0 and 5 GPa. (no mgpv melting constraint).
+
+588) 040416.  Use en=enm at 0 GPa and mgpv=enm at 25 GPa, 2900 K.
+
+589) 050516.  Update eos constraints on coes and st.  bourovarichet_06 for alpha of coes.  jiangetal_09 for K, G, K', G' of st.  wangetal_12 for alpha, dK/dT for st.  Update mppv eos using sakaietal_16 and more consistent dK_S/dT from Stackhouse & Brodholt (2007).
+
+590) 050616.  Correct error in V_0(fppv).  As V_0(mppv) was changed, need to update V_0(fppv) according to the assumption V_0(fppv) - V_0(mppv) = V_0(fepv) - V_0(mgpv).
+
+591) 310516.  Update constraints on elasticity of stishovite.  Compute errors.
